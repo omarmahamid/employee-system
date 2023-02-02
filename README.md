@@ -24,7 +24,7 @@ Data-Access diagrams
 ![image](https://user-images.githubusercontent.com/59146036/216476473-cb54ea4d-a5c3-42f3-8bab-77a33582c49a.png)
 
 
-properties for the DB exist in yaml file
+properties for the DB and the server exist in yaml file
 
 
 ![image](https://user-images.githubusercontent.com/59146036/216476639-09c51290-fe55-4e39-9c1c-e1073ea7a11e.png)
@@ -39,5 +39,6 @@ front end based react
 
 
 
+video for using the system.
 
 
