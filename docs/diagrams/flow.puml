@@ -1,0 +1,20 @@
+@startuml
+
+actor server
+
+participant ServerController
+
+
+server->ServerController:post/get/put/delete
+ServerController->DataHolder:createDataHolder
+Activate DataHolder #FFBBBB
+DataHolder->DataHolder:parsing
+DataHolder->ServerController:dataHolder
+ServerController->ISrvHandler:choose handler
+ISrvHandler->ServerResponse:processRequest(logic)
+
+ServerResponse->ISrvHandler:return ServerResponse
+ISrvHandler->ServerController:return ServerResponse
+ServerController->server:return ServerResponse
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+
+
+interface JpaRepository<String,Employee>{
+}
+
+interface EmployeeRepository<Repository> extends JpaRepository{
+}
+
+
+class DataRepository{
+    - private final EmployeeRepository jpaRepository;
+    - private final CacheEmployeeService cacheRepository;
+}
+
+
+class CacheEmployeeService{
+}
+
+DataRepository --* CacheEmployeeService : use
+DataRepository --* EmployeeRepository : use
+
+@enduml
