@@ -1,0 +1,68 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+p {
+  margin-bottom: 40px;
+  background-color: #ddd;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+button {
+  padding: 15px 25px;
+  border-radius: 10px;
+  background-color: #1e90ff;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 35px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: scale(1);
+}
+
+button:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 90%;
+  margin-top: 40px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid lightgrey;
+  transition: all 0.3s ease-in-out;
+}
+
+th {
+  background-color: #ddd;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover td {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+}
