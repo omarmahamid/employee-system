@@ -41,8 +41,7 @@ Node.js for running the front-end
 
 attaching photo
 
-![image](https://user-images.githubusercontent.com/59146036/216476819-710ca947-f118-4cad-b4b9-be528d692873.png)
-
+![image](https://user-images.githubusercontent.com/59146036/216477717-b9c1f706-55bd-4b1d-a508-89b681590c50.png)
 
 
 video for using the system.
