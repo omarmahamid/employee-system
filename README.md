@@ -33,7 +33,13 @@ properties for the DB and the server exist in yaml file
 
 # Front-End
 
-front end based react
+front end based react.
+
+Node.js for running the front-end
+
+
+
+attaching photo
 
 ![image](https://user-images.githubusercontent.com/59146036/216476819-710ca947-f118-4cad-b4b9-be528d692873.png)
 
