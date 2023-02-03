@@ -21,8 +21,7 @@ Handlers diagrams
 
 Data-Access diagrams
 
-![image](https://user-images.githubusercontent.com/59146036/216476473-cb54ea4d-a5c3-42f3-8bab-77a33582c49a.png)
-
+![image](https://user-images.githubusercontent.com/59146036/216478727-f844b1a4-6120-415b-bce3-984f472c61e7.png)
 
 properties for the DB and the server exist in yaml file
 
