@@ -2,6 +2,7 @@ package com.omar.employee.controller;
 
 
 import com.omar.employee.model.EmployeeDTO;
+import com.omar.employee.ratelimit.IRateLimitService;
 import com.omar.employee.request.EmployeeRequest;
 import com.omar.employee.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +25,25 @@ public class EmployeeController{
 
 
     private final Map<String, ISrvHandler> srvHandlerMap;
+    private final IRateLimitService rateLimitService;
 
     @Autowired
-    public EmployeeController(Map<String, ISrvHandler> srvHandlerMap){
+    public EmployeeController(Map<String, ISrvHandler> srvHandlerMap,
+                              IRateLimitService rateLimitService){
+
         this.srvHandlerMap = srvHandlerMap;
+        this.rateLimitService = rateLimitService;
     }
 
     @PostMapping
     public ResponseEntity<String> addEmployee(@RequestBody EmployeeRequest request) {
 
         LOGGER.info("post request, add employee {}", request.toString());
+
+        if (rateLimitService.overLimit()){
+            LOGGER.warn("RateLimit limited the requests, try in next minutes");
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
 
         String employeeId = ((SrvHandlerAddEmployee) srvHandlerMap.get(SrvHandlerVCB.ADD_EMPLOYEE)).addEmployee(request);
         return new ResponseEntity<>(employeeId, HttpStatus.CREATED);
