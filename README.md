@@ -7,7 +7,7 @@ employee system, based on spring and react
 back-end written in java based on spring-framework
 
 Architecture
-![image](https://user-images.githubusercontent.com/59146036/216476327-45371af1-0024-4bcc-b26d-8d05cacbd68f.png)
+![image](https://user-images.githubusercontent.com/59146036/216478417-b1884ad0-d6e4-4bd9-9dc4-7eb2c7859bcb.png)
 
 
 Class Diagrams
