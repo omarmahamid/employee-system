@@ -10,7 +10,7 @@ Architecture
 ![image](https://user-images.githubusercontent.com/59146036/216478417-b1884ad0-d6e4-4bd9-9dc4-7eb2c7859bcb.png)
 
 ```
-Class Diagrams
+##Class Diagrams
 ```
 
 Handlers diagrams
