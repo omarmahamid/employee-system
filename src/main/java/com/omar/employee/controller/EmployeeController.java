@@ -1,6 +1,7 @@
 package com.omar.employee.controller;
 
 
+import com.omar.employee.exceptions.EmployeeDataNotFoundException;
 import com.omar.employee.model.EmployeeDTO;
 import com.omar.employee.ratelimit.IRateLimitService;
 import com.omar.employee.request.EmployeeRequest;
@@ -45,8 +46,13 @@ public class EmployeeController{
             return new ResponseEntity<>(HttpStatus.OK);
         }
 
-        String employeeId = ((SrvHandlerAddEmployee) srvHandlerMap.get(SrvHandlerVCB.ADD_EMPLOYEE)).addEmployee(request);
-        return new ResponseEntity<>(employeeId, HttpStatus.CREATED);
+        try {
+            String employeeId = ((SrvHandlerAddEmployee) srvHandlerMap.get(SrvHandlerVCB.ADD_EMPLOYEE)).addEmployee(request);
+            return new ResponseEntity<>(employeeId, HttpStatus.CREATED);
+        }catch (EmployeeDataNotFoundException e) {
+            String errorMessage = "Error: " + e.getMessage();
+            return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping

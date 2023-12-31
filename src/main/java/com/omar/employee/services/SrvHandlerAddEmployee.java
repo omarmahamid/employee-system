@@ -2,11 +2,13 @@ package com.omar.employee.services;
 
 
 import com.omar.employee.entity.Employee;
+import com.omar.employee.exceptions.EmployeeDataNotFoundException;
 import com.omar.employee.repository.DataRepository;
 import com.omar.employee.request.EmployeeRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,8 +36,9 @@ public class SrvHandlerAddEmployee implements ISrvHandler{
         List<String> missingData = mailValidatorComponent.validateEmployeeData(employeeRequest);
 
         if (!missingData.isEmpty()){
-            LOGGER.error("employee data {} are missing, or the mail {} not valid", missingData, employeeRequest.getEmployeeMail());
-            return employeeRequest.getEmployeeId();
+            String errorMessage = String.format("Employee data %s are missing, or the mail %s not valid", missingData, employeeRequest.getEmployeeMail());
+            LOGGER.error(errorMessage);
+            throw new EmployeeDataNotFoundException(errorMessage);
         }
 
         Employee employee = Employee.builder()
